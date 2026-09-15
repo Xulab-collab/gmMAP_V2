@@ -84,7 +84,7 @@ python -m pip install -e ".[dev,spatial]"
 ### Option 2: editable installation for development
 
 ```bash
-git clone https://github.com/Xulab-collab/gmMAP.git
+git clone https://github.com/Xulab-collab/gmMAP_V2.git
 cd gmMAP
 
 python -m venv .venv
