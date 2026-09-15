@@ -1,0 +1,47 @@
+python plot_spatial_metabolite_violin_and_tissue_similarity_cnsStyle_spatialName_allPDF_targetGCST_fastObs_yflip.py \
+  --h5ad /path/to/input \
+  --scheme_long Meta_SchemeC_AUROC_UpDownNet_outputs/Meta_SchemeC_AUROC_UpDownNet_ALL_stats_long.csv.gz \
+  --score_dir Meta_SchemeC_AUROC_UpDownNet_outputs/cellTraitMatrices \
+  --trait_meta /path/to/input \
+  --outdir Target_pdf/GCST90200041_violin_yflip \
+  --method wAUCell \
+  --stage S3_geneSetZ_cellZ \
+  --target_traits GCST90200041 \
+  --target_direction abs \
+  --target_top_tissues 10 \
+  --plot_trait_types levels,ratio,unknown \
+  --score_mode up \
+  --tissue_col Subregion \
+  --violin_max_points_per_tissue 4000 
+
+python plot_spatial_metabolite_violin_allTraits_batch.py \
+  --h5ad mouse_spatial_humanGene_counts.h5ad \
+  --scheme_long Meta_SchemeC_AUROC_UpDownNet_ALL_stats_long.csv.gz \
+  --score_dir cellTraitMatrices \
+  --trait_meta /path/to/input \
+  --outdir all_trait_spatial_violin_results \
+  --all_traits \
+  --plot_trait_types levels \
+  --plot_direction positive \
+  --score_mode net \
+  --tissue_col Subregion \
+  --spatial_x_col x_image \
+  --spatial_y_col y_image \
+  --top_tissues_violin 10 \
+  --trait_batch_size 50
+
+python plot_target_metabolite_tissue_group_diff_violin_compact.py \
+  --h5ad /path/to/input \
+  --scheme_long Meta_SchemeC_AUROC_UpDownNet_outputs/Meta_SchemeC_AUROC_UpDownNet_ALL_stats_long.csv.gz \
+  --score_dir Meta_SchemeC_AUROC_UpDownNet_outputs/cellTraitMatrices \
+  --trait_meta /path/to/input \
+  --outdir Target_pdf/Diff_GCST90199623_GastricGlands_condition \
+  --method wAUCell \
+  --stage S3_geneSetZ_cellZ \
+  --target_traits GCST90199623 \
+  --target_tissue "Gastric Glands (Parietal Cell Rich)" \
+  --tissue_col Subregion \
+  --group_col Treatment \
+  --score_mode up \
+  --groups Control,LPS \
+  --reference_group Control 

@@ -1,0 +1,18 @@
+modules:
+  - name: Glycolysis_to_TCA_entry
+    input_trait: Pyruvate levels
+    output_trait: Citrate levels
+    ratio_trait: Citrate to pyruvate ratio
+    ratio_sign: 1
+    enzyme_support: 1.0
+    compartment_support: 1.0
+    cofactor_support: 1.0
+
+  - name: Fatty_acid_beta_oxidation
+    input_trait: Long-chain acylcarnitine levels
+    output_trait: Acetylcarnitine levels
+    ratio_trait: Acetylcarnitine to long-chain acylcarnitine ratio
+    ratio_sign: 1
+    enzyme_support: 1.0
+    compartment_support: 1.0
+    cofactor_support: 1.0

@@ -1,0 +1,9 @@
+sample_id,condition,donor
+D01_control,control,D01
+D01_treated,treated,D01
+D02_control,control,D02
+D02_treated,treated,D02
+D03_control,control,D03
+D03_treated,treated,D03
+D04_control,control,D04
+D04_treated,treated,D04

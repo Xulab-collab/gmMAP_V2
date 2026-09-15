@@ -1,0 +1,35 @@
+{
+  "tests": "30 passed in 5.24s",
+  "scope": "Original tests plus matched-background tests; synthetic data only, no user biological dataset supplied",
+  "modified": [
+    "README.md",
+    "src/gmmap/cli.py"
+  ],
+  "added": [
+    "src/gmmap/core/background.py",
+    "tests/test_background.py",
+    "MATCHED_BACKGROUND_说明.md",
+    "VALIDATION.json"
+  ],
+  "original_archive": "F:/1000G-20130502-hg19/gmMAP-main (1).zip",
+  "calibration": "symmetric_matched_MC_v1",
+  "exact_scdrs": false,
+  "bulk_entrypoint": "gmmap-bulk-smrs analyze / predict",
+  "bulk_scope": "Paired or independent biological units; no general covariate regression; no user biological dataset supplied",
+  "bulk_additions": [
+    "src/gmmap/core/bulk_smrs.py",
+    "tests/test_bulk_smrs.py",
+    "BULK_SMRS_说明.md",
+    "examples/bulk_smrs"
+  ],
+  "bulk_modified": [
+    "src/gmmap/cli.py",
+    "pyproject.toml",
+    "README.md"
+  ],
+  "synthetic_demo": "8 paired donors, 800 genes, 50 target genes, 99 controls; 256 exact paired label swaps; artificially strong effect",
+  "counts_preprocessing": "per-sample library scaling to 1e6 then natural log1p; no cohort-fitted normalization",
+  "model_format_version": 2,
+  "counts_input": "nonnegative integer-valued counts; positive library sizes",
+  "bulk_revision": "v1.1 counts preprocessing"
+}

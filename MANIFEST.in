@@ -1,0 +1,11 @@
+include README.md
+include LICENSE
+include CITATION.cff
+include configs/*.yaml
+recursive-include examples *.md *.yaml *.sh
+recursive-exclude data *
+recursive-exclude results *
+recursive-exclude notebooks/.ipynb_checkpoints *
+
+recursive-include src/gmmap/resources *
+recursive-include examples/full_workflows *

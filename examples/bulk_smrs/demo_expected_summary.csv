@@ -1,0 +1,3 @@
+score,effect_treated_minus_control,ci95_low,ci95_high,parametric_p_two_sided,effect_permutation_p,oof_auc,auc_permutation_p,oof_sensitivity,oof_specificity,oof_balanced_accuracy,oof_within_donor_concordance,effect_q_two_scores,auc_q_two_scores
+raw_score,1.0274799941422073,0.850147142193564,1.2048128460908505,2.600542254677639e-06,0.0078125,1.0,0.0078125,1.0,1.0,1.0,1.0,0.0078125,0.0078125
+calibrated_score,5.62166873732493,4.688947192492802,6.554390282157057,1.989997498861459e-06,0.0078125,1.0,0.0078125,1.0,0.75,0.875,1.0,0.0078125,0.0078125

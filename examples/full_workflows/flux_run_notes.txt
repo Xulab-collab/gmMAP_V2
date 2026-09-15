@@ -1,0 +1,24 @@
+python gmMAP-flux.py \
+  --annotation module_ratio_template.csv \
+  --score-matrix Meta_wAUCell_up_S3_geneSetZ_cellZ.csv.gz \
+  --gene-matrix cell_by_gene_expression_matrix.csv.gz \
+  --enzyme-annotation "Module_round7.xlsx" \
+  --metadata cell_metadata.csv \
+  --id-col cell_id \
+  --celltype-col celltype \
+  --agg mean \
+  --outdir metabolic_flow_round13_out
+
+
+python gmMAP-flux-plot_metabolism.py \
+  --input-dir metabolic_flow_round13_out \
+  --outdir metabolic_flow_round13_figures_FAO_core \
+  --selected-celltypes "NPCd,RVCSBa,SSBpr,ErPrT" \
+  --pathway-preset fao_core \
+  --fig1a-row-height 0.18 \
+  --fig1a-col-width 0.24 \
+  --fig1a-min-height 4.0 \
+  --fig1a-min-width 2.0 \
+  --phase-label-topn 5 \
+  --fig2-panel-width 3.5 \
+  --fig2-panel-height 3.5 

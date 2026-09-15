@@ -1,0 +1,30 @@
+#代谢药物
+python batch_rank_drug_reversal_all_celltypes.py \
+  --trait_diff_dir /path/to/input \
+  --pattern "trait_score_diff_*.csv" \
+  --cmap_drug /path/to/input drugs_level.csv.gz \
+  --outdir Drug_Reversal_ALL_Celltypes_GEOdataset \
+  --effect_col z_wilcoxon \
+  --q_col q_wilcoxon \
+  --q_max 0.05 \
+  --score_col median_score \
+  --mode reverse \
+  --min_traits_per_drug 3 \
+  --standardize_drug_by_trait \
+  --skip_allcelltypes_merged
+
+#cMAP药物
+python batch_rank_drug_reversal_all_celltypes.py \
+  --trait_diff_dir /path/to/input \
+  --pattern "trait_score_diff_*.csv" \
+  --cmap_drug /path/to/input \
+  --outdir Drug_Reversal_ALL_Celltypes_CMAP_dataset \
+  --effect_col z_wilcoxon \
+  --q_col q_wilcoxon \
+  --q_max 0.05 \
+  --score_col median_score \
+  --mode reverse \
+  --min_traits_per_drug 3 \
+  --standardize_drug_by_trait \
+  --skip_allcelltypes_merged
+  

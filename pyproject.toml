@@ -1,0 +1,89 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gmmap"
+version = "0.1.0"
+description = "Genetically informed Metabolite trait Mapping across single-cell and spatial tissues"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Heng Xu"}
+]
+keywords = ["single-cell", "spatial-transcriptomics", "metabolomics", "GWAS", "AUROC", "metabolism"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Bio-Informatics"
+]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scipy>=1.10",
+  "scikit-learn>=1.3",
+  "statsmodels>=0.14",
+  "anndata>=0.10",
+  "pyyaml>=6.0",
+  "tqdm>=4.66",
+  "joblib>=1.3"
+]
+
+[project.optional-dependencies]
+spatial = ["scanpy>=1.9", "matplotlib>=3.7", "h5py>=3.9"]
+full = ["scanpy>=1.9", "matplotlib>=3.7", "seaborn>=0.13", "openpyxl>=3.1", "h5py>=3.9"]
+r = ["rpy2>=3.5"]
+dev = ["pytest>=7", "ruff>=0.5", "build>=1.2", "twine>=5"]
+docs = ["mkdocs>=1.6", "mkdocs-material>=9"]
+
+[project.urls]
+Homepage = "https://github.com/Xulab-collab/gmMAP"
+Repository = "https://github.com/Xulab-collab/gmMAP"
+Issues = "https://github.com/Xulab-collab/gmMAP/issues"
+
+[project.scripts]
+gmmap = "gmmap.cli:main"
+gmmap-score = "gmmap.cli:score_main"
+gmmap-bulk-smrs = "gmmap.core.bulk_smrs:main"
+gmmap-association = "gmmap.cli:association_main"
+gmmap-spatial = "gmmap.cli:spatial_main"
+gmmap-pseudotime = "gmmap.cli:pseudotime_main"
+gmmap-flux = "gmmap.cli:flux_main"
+gmmap-perturb = "gmmap.cli:perturb_main"
+gmmap-drug = "gmmap.cli:drug_main"
+gmmap-main-full = "gmmap.workflows.workflow_cli:scheme_c_main"
+gmmap-spatial-auroc-full = "gmmap.workflows.workflow_cli:spatial_auroc_main"
+gmmap-spatial-identify = "gmmap.workflows.workflow_cli:spatial_identify_main"
+gmmap-spatial-violin-batch = "gmmap.workflows.workflow_cli:spatial_violin_batch_main"
+gmmap-spatial-violin-similarity = "gmmap.workflows.workflow_cli:spatial_violin_similarity_main"
+gmmap-spatial-groupdiff = "gmmap.workflows.workflow_cli:spatial_groupdiff_main"
+gmmap-pseudotime-pyucell = "gmmap.workflows.workflow_cli:pseudotime_pyucell_main"
+gmmap-pseudotime-plot = "gmmap.workflows.workflow_cli:pseudotime_plot_main"
+gmmap-flux-full = "gmmap.workflows.workflow_cli:flux_full_main"
+gmmap-flux-plot = "gmmap.workflows.workflow_cli:flux_plot_main"
+gmmap-perturb-full = "gmmap.workflows.workflow_cli:perturb_full_main"
+gmmap-drug-rank-full = "gmmap.workflows.workflow_cli:drug_rank_full_main"
+gmmap-drug-plot = "gmmap.workflows.workflow_cli:drug_plot_main"
+gmmap-resources = "gmmap.workflows.workflow_cli:resources_main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+gmmap = ["py.typed", "resources/drug/*.csv.gz", "resources/flux/*.csv", "resources/flux/*.xlsx"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "gmMAP: Genetically informed Metabolite trait Mapping across single-cell and spatial tissues"
+message: "If you use gmMAP, please cite the associated manuscript or repository release."
+type: software
+authors:
+  - family-names: Xu
+    given-names: Heng
+version: 0.1.0
+date-released: 2026-06-21
+repository-code: "https://github.com/YOUR_USERNAME/gmmap"
+license: "LicenseRef-Proprietary"

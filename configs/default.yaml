@@ -1,0 +1,19 @@
+# Default gmMAP parameters
+score:
+  top_n_genes: 1000
+  min_valid_genes: 200
+  method: waucell
+  top_frac: 0.05
+  stage: S3
+
+association:
+  min_cells_in_type: 20
+  q_cutoff: 0.05
+  bg_q_cutoff: 0.20
+  empirical_null_quantile: 0.95
+  specificity_gap_min: 0.03
+
+runtime:
+  n_jobs: 60
+  delong_max_total_cells: 50000
+  boot_n: 200
